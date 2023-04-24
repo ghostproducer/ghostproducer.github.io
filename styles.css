@@ -1,0 +1,233 @@
+/* Reset some default styles */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Add some basic styles */
+body {
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+header {
+  background-color: #333;
+  color: #fff;
+  padding: 20px;
+}
+
+nav {
+  background-color: #f2f2f2;
+  border-bottom: 1px solid #ccc;
+  padding: 10px;
+}
+
+nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+
+nav li {
+  display: inline-block;
+  margin: 0 10px;
+}
+
+nav a {
+  color: #333;
+  display: block;
+  padding: 10px;
+  text-decoration: none;
+}
+
+nav a:hover {
+  background-color: #ccc;
+  color: #fff;
+}
+
+#content-left,
+#content-right {
+  background-color: #f2f2f2;
+  /* padding: 20px; */
+  /* width: 25%; */
+  /* float: left; */
+}
+
+#content-left {
+  margin-right: 10px;
+}
+
+main {
+  background-color: #fff;
+  padding: 20px;
+  overflow: hidden;
+}
+
+footer {
+  background-color: #333;
+  color: #fff;
+  padding: 20px;
+  text-align: center;
+  clear: both;
+}
+
+footer p {
+  margin: 0;
+}
+
+/* Styles for the digital clock */
+.digital-clock {
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.nav-bar {
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+}
+
+#list-button {
+  position: relative;
+  overflow: hidden;
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+#list-button:after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  background-color: rgba(255, 255, 255, 0.5);
+  border-radius: 100%;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+}
+
+#list-button:focus:after,
+#list-button:active:after {
+  width: 200%;
+  height: 200%;
+  opacity: 1;
+  transition: width 0.5s, height 0.5s, opacity 0.5s;
+}
+
+.list-container {
+  background-color: #fff;
+  padding: 20px;
+}
+
+.header-style {
+  display: flex;
+  justify-content: space-between;
+}
+
+#indicator {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  padding: 10px;
+  background-color: #fff;
+  border: 1px solid #000;
+  border-radius: 5px;
+  font-size: 18px;
+}
+
+
+#slider-container {
+  width: 500px;
+  height: 300px;
+  overflow: hidden;
+}
+#slider-images {
+  width: 2000px; /* Total width of all the images */
+}
+#prev-button, #next-button {
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  margin-top: 10px;
+  cursor: pointer;
+}
+#prev-button:hover, #next-button:hover {
+  background-color: #3e8e41;
+}
+
+
+#slider-container {
+  width: 200px; /* Width of one image */
+  height: 200px; /* Height of one image */
+  overflow: hidden;
+}
+#slider-images {
+  width: 1000px; /* Total width of all the images */
+}
+#slider-images img {
+  width: 200px;
+  height: 200px;
+  margin-right: 10px;
+}
+
+.button-box {
+    display: flex;
+    justify-content: space-between;
+}
+
+footer a {
+  color: #ddd;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+footer a:hover {
+  color: #007bff;
+}
+
+
+
+
+.columns {
+  display: flex;
+  /* flex-direction: row; */
+  /* flex-wrap: wrap; */
+  /* width: 100%; */
+}
+
+
+
+.column-left {
+  flex: 0 0 200px;
+  padding: 10px;
+}
+
+.column-main {
+  flex: 1;
+  padding: 10px;
+}
+
+.column-right {
+  flex: 0 0 200px;
+  padding: 10px;
+}
+
+.button-holder {
+  text-align: center;
+}
+
+.footer { 
+  position: absolute;
+    bottom: 0;
+    width: 100%;
+}
