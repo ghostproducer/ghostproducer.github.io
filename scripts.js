@@ -6,8 +6,8 @@ function updateTime() {
   const timeString = `${hours}:${minutes}:${seconds}`;
   document.querySelector(".digital-clock").textContent = timeString;
 }
-
 setInterval(updateTime, 1000);
+
 function getList() {
   // Clear the existing list
   var container = document.getElementById("list-container");
@@ -48,57 +48,44 @@ function getList() {
   // Send the request
   xhr.send();
 }
-function getCoordenates () {
-    var indicator = document.getElementById('indicator');
-
-		document.addEventListener('mousemove', function(e) {
-			var x = e.clientX;
-			var y = e.clientY;
-
-			indicator.innerHTML = 'X: ' + x + ', Y: ' + y;
-		});
-}
 
 function getCoordenates() {
-    let output = document.getElementById("output");
-    window.addEventListener("mousemove", (e) => {
-      let xPos = e.clientX;
-      let yPos = e.clientY;
-      output.innerHTML = `<div><span>X: </span>${xPos}px</div><div><span>Y: </span>${yPos}px</div>`;
-    });
+  let output = document.getElementById("output");
+  window.addEventListener("mousemove", (e) => {
+    let xPos = e.clientX;
+    let yPos = e.clientY;
+    output.innerHTML = `<div><span>X: </span>${xPos}px</div><div><span>Y: </span>${yPos}px</div>`;
+  });
 }
-
 getCoordenates();
 
-
-
 // Fetch cat images from API
-fetch('https://api.thecatapi.com/v1/images/search?limit=10')
-  .then(response => response.json())
-  .then(data => {
-    const sliderImages = document.getElementById('slider-images');
-    data.forEach(cat => {
-      const img = document.createElement('img');
+fetch("https://api.thecatapi.com/v1/images/search?limit=10")
+  .then((response) => response.json())
+  .then((data) => {
+    const sliderImages = document.getElementById("slider-images");
+    data.forEach((cat) => {
+      const img = document.createElement("img");
       img.src = cat.url;
       sliderImages.appendChild(img);
     });
   })
-  .catch(error => console.error(error));
+  .catch((error) => console.error(error));
 
 // Slider functionality
-const sliderImages = document.getElementById('slider-images');
-const prevButton = document.getElementById('prev-button');
-const nextButton = document.getElementById('next-button');
+const sliderImages = document.getElementById("slider-images");
+const prevButton = document.getElementById("prev-button");
+const nextButton = document.getElementById("next-button");
 let position = 0;
 
 function moveSlider(direction) {
   const imageWidth = sliderImages.children[0].clientWidth;
-  if (direction === 'prev') {
+  if (direction === "prev") {
     position += imageWidth;
     if (position > 0) {
       position = -(sliderImages.clientWidth - imageWidth);
     }
-  } else if (direction === 'next') {
+  } else if (direction === "next") {
     position -= imageWidth;
     if (position < -(sliderImages.clientWidth - imageWidth)) {
       position = 0;
@@ -107,6 +94,5 @@ function moveSlider(direction) {
   sliderImages.style.transform = `translateX(${position}px)`;
 }
 
-prevButton.addEventListener('click', () => moveSlider('prev'));
-nextButton.addEventListener('click', () => moveSlider('next'));
-
+prevButton.addEventListener("click", () => moveSlider("prev"));
+nextButton.addEventListener("click", () => moveSlider("next"));
